@@ -1,6 +1,7 @@
 import express from 'express';
 import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
+import apiRouter from './api';
 
 const server = express();
 
@@ -9,6 +10,12 @@ const server = express();
 // });
 
 server.use(express.static('public'));
+server.use('/api', apiRouter);
+
+server.get('*', (req , res , next) => {
+    // if (req.url === '/inventory') return next();
+    res.sendFile(path.join(__dirname+'/public/index.html'))
+});
 
 server.use(sassMiddleware({
   src: path.join(__dirname, 'sass'),
@@ -16,7 +23,7 @@ server.use(sassMiddleware({
 }));
 
 server.use(function(req, res) {
-    res.status(404).send('Sorry cant find that!');
+    res.status(404).send("<h2>404 ERROR: Sorry we can't find that page!!!</h2>");
 });
 
 // Define the port.

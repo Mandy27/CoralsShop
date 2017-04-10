@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 // import { Provider } from 'react-redux'; 
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-import { createStore, applyMiddleware } from 'redux';  
-import reduxThunk from 'redux-thunk';  
+import { createStore } from 'redux';
+//let store = createStore(todoApp)
 // import reducers from './reducers/index';  
 //import { AUTH_USER } from './actions/types';
 

@@ -18,8 +18,8 @@ class Homepage extends Component {
 				<Well>
 					<div className="row">
 						<div className="col-sm-4"></div>
-						<div className="col-sm-2"></div>
-						<div className="col-sm-2">
+						<div className="col-sm-1"></div>
+						<div className="col-sm-3" style={{textAlign: "right"}}>
 							<label className="custom-label">Sort by:</label>
 							<Dropdown title={"Price low-high"} data={["Price high-low", "Price low-high"]} id={"sortBy"}/>
 						</div>

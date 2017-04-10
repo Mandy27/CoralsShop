@@ -7,6 +7,7 @@ import Wysiwyg from './components/Wysiwyg';
 import Promotions from './components/Promotions';
 import ContactUs from './components/ContactUs';
 import Login from './components/Login';
+import Inventory from './components/Inventory';
 import NotFoundPage from './components/not-found-page';
 
 // Map components to different routes.
@@ -17,6 +18,7 @@ export default (
   <Route path="/" component={App}> 
     <IndexRoute component={HomePage} />
     <Route path="login" component={Login} />
+    <Route path="inventory" component={Inventory} />
     <Route path="corals" component={Corals} />
     <Route path="wysiwyg" component={Wysiwyg} />
     <Route path="promotions" component={Promotions} />

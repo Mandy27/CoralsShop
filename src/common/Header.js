@@ -11,7 +11,7 @@ class Header extends Component {
             <div>
                 <a href="/"><Image src={Logo} alt="KIMGON" className="logo" /></a>
                 <div className="custom-navbar-top">
-                    <Link to="/login" className="login-btn"><Glyphicon glyph="log-in" />&nbsp; Login</Link>
+                    <Link to="/login" className="login-btn"><Glyphicon glyph="log-in" />&nbsp; Admin Login</Link>
                 </div>
                 <Navbar collapseOnSelect>
                     <Navbar.Header>
