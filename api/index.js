@@ -1,8 +1,20 @@
 import bodyParser from 'body-parser';
 import express from 'express';
+import { MongoClient } from 'mongodb';
+import assert from 'assert';
+import config from '../config';
+
 const router = express.Router();
 // create application/json parser
-const jsonParser = bodyParser.json()
+const jsonParser = bodyParser.json();
+
+let mdb;
+
+MongoClient.connect(config.mongodbUri, (err, db) => {
+	assert.equal(null, err);
+	console.log("Connected correctly to server");
+	mdb = db;
+});
 
 function sendResponse(statusCode, message, response){
 	response.status(statusCode).send(message);
@@ -25,7 +37,9 @@ router.post('/user',jsonParser,(req,res)=>{
 	}
     if(req.body.email==="minhton@gmail.com" && req.body.password==="minhtonpassword"){
         sendResponse(200,"SUCCESS",res);
-    }
+    }else{
+		sendResponse(200,"FAIL",res);
+	}
 });
 
 export default router;
